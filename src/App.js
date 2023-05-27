@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Home from "./MovieApp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Favorites from "./MovieApp/Favorites";
+import DefaultLayout from "./Layouts/DefaultLayout";
 
-function App() {
+export default function App() {
+  const [data, setData] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout setData={setData} />}>
+          <Route path="/" element={<Home data={data} setData={setData} />} />
+          <Route
+            path="/favorites"
+            element={<Favorites data={data} setData={setData} />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

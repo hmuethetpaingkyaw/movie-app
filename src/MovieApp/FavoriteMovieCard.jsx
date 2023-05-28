@@ -1,21 +1,21 @@
 import axios from "axios";
+import { apiCall } from "../services/apiService";
 
 export default function FavouriteMovieCard({ movie, setData }) {
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/favorites/${id}`);
-    await axios.get(`http://localhost:3000/favorites`).then((response) => {
-      setData(response.data);
-    });
+    await apiCall(`http://localhost:3000/favorites/${id}`, "delete");
+    const tempData = await apiCall("http://localhost:3000/favorites", "get");
+    setData(tempData);
   };
 
   const handleUpdate = async (id) => {
-    await axios.put(`http://localhost:3000/favorites/${id}`, {
+    const data = {
       ...movie,
       Title: "Hmue Thet Paing Kyaw",
-    });
-     await axios.get(`http://localhost:3000/favorites`).then((response) => {
-       setData(response.data);
-     });
+    };
+    await apiCall(`http://localhost:3000/favorites/${id}`, "put", data);
+    const tempData = await apiCall("http://localhost:3000/favorites", "get");
+    setData(tempData);
   };
 
   return (

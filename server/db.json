@@ -1,52 +1,12 @@
 {
   "favorites": [
     {
-      "Title": "Hmue Thet Paing Kyaw",
+      "Title": "Titanic II",
       "Year": "2010",
       "imdbID": "tt1640571",
       "Type": "movie",
       "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxMjQ1MjA5Ml5BMl5BanBnXkFtZTcwNjIzNjg1Mw@@._V1_SX300.jpg",
       "id": 2
-    },
-    {
-      "Title": "Hmue Thet Paing Kyaw",
-      "Year": "2000",
-      "imdbID": "tt0330994",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTg5MjcxODAwMV5BMl5BanBnXkFtZTcwMTk4OTMwMg@@._V1_SX300.jpg",
-      "id": 3
-    },
-    {
-      "Title": "Hmue Thet Paing Kyaw",
-      "Year": "1953",
-      "imdbID": "tt0046435",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTU3NTUyMTc3Nl5BMl5BanBnXkFtZTgwOTA2MDE3MTE@._V1_SX300.jpg",
-      "id": 4
-    },
-    {
-      "Title": "Hmue Thet Paing Kyaw",
-      "Year": "2013",
-      "imdbID": "tt2229499",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BN2ZhY2IzMWQtMGU4MC00ODg2LThkNWMtNWMzYmM2OTc5ZDMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-      "id": 5
-    },
-    {
-      "Title": "Hmue Thet Paing Kyaw",
-      "Year": "2011",
-      "imdbID": "tt1285241",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMzNiYWYxNWYtZDYzMC00MzA0LTkzY2UtNDAwNDhiYmVjNmEwXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
-      "id": 6
-    },
-    {
-      "Title": "Hmue Thet Paing Kyaw",
-      "Year": "2012",
-      "imdbID": "tt1695366",
-      "Type": "series",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjI2MzU2NzEzN15BMl5BanBnXkFtZTcwMzI5NTU3Nw@@._V1_SX300.jpg",
-      "id": 7
     }
   ]
 }

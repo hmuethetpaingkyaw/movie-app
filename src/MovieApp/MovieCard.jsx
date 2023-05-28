@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { apiCall } from "../services/apiService";
 
 export default function MovieCard({movie}) {
   const navigate = useNavigate();
   const handleSave = async () => {
-    await axios
-      .post("http://localhost:3000/favorites", movie)
+    // await axios
+    //   .post("http://localhost:3000/favorites", movie)
+
+    apiCall("http://localhost:3000/favorites", 'post', movie);
       navigate('/favorites')
   }
     return (

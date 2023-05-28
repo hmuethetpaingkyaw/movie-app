@@ -1,9 +1,14 @@
 import axios from "axios";
 
+const headers = {
+  "Content-Type": "application/json",
+  Accept: "application/json",
+};
 
-export const apiCall = async (url)=> {
+export const apiCall = async (url, method, data)=> {
+  axios.defaults.headers = headers;
     return await axios
-       .get(url)
+       [method](url, data)
        .then(function (response) {
          return response.data;
        });
@@ -12,3 +17,9 @@ export const apiCall = async (url)=> {
 // method , data 
 // axios.method 
 // axios[method]
+
+// person.name; 
+
+// const property = 'name';
+// person[property]
+// person['name']

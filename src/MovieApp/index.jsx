@@ -7,7 +7,7 @@ import { apiCall } from "../services/apiService";
 export default function Home({ data, setData }) {
   const loadData = async () => {
    const tempData = await apiCall(
-     "https://www.omdbapi.com/?s=Titanic&apikey=263d22d8"
+     "https://www.omdbapi.com/?s=Titanic&apikey=263d22d8", 'get'
    );
    setData(tempData.Search);
   }

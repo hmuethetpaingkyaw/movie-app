@@ -3,13 +3,15 @@ import NavBar from "../Components/Navbar";
 import MovieCard from "./MovieCard";
 import axios from "axios";
 import FavouriteMovieCard from "./FavoriteMovieCard";
+import { apiCall } from "../services/apiService";
 
 export default function Favorites({data, setData}) {
-
+  const loadData = async () => {
+     const tempData = await apiCall("http://localhost:3000/favorites", "get");
+     setData(tempData);
+  }
   useEffect(() => {
-    axios.get("http://localhost:3000/favorites").then(function (response) {
-      setData(response.data);
-    });
+    loadData()
   }, []);
 
   return (

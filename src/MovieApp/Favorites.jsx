@@ -5,7 +5,9 @@ import axios from "axios";
 import FavouriteMovieCard from "./FavoriteMovieCard";
 import { apiCall } from "../services/apiService";
 
-export default function Favorites({data, setData}) {
+export default function Favorites() {
+  const [data, setData] = useState(null);
+
   const loadData = async () => {
      const tempData = await apiCall("http://localhost:3000/favorites", "get");
      setData(tempData);

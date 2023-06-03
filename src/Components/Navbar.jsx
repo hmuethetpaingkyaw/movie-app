@@ -1,20 +1,24 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { NavLink } from "react-router-dom";
+import { getUser, removeToken, removeUser } from "../utils/cache";
 
-export default function NavBar({ setData }) {
+export default function NavBar() {
+  const [user, setUser] = useState();
+  const navigate = useNavigate();
+ 
+  useEffect(()=> {
+    const user = getUser();
+    setUser(JSON.parse(user))
+  },[])
 
-  const handleFilter = async (value) => {
-    await axios
-      .get(`https://www.omdbapi.com/?s=${value}&apikey=263d22d8`)
-      .then(function (response) {
-        if (response.data.Search) {
-          setData(response.data.Search);
-        } else {
-          setData([]);
-        }
-      });
-  };
+  const handleLogout = () => {
+    removeToken();
+    removeUser();
+    navigate('/login')
+  }
+
   return (
     <div className="row bg-secondary text-white p-3">
       <div className="col d-flex justify-content-between">
@@ -30,6 +34,10 @@ export default function NavBar({ setData }) {
           />
         </NavLink>
         <div className="d-flex justify-content-center align-items-center gap-5">
+          <span>{user?.email}</span>
+          <button className="btn btn-danger" onClick={handleLogout}>
+            Logout
+          </button>
           <NavLink
             to="/favorites"
             style={{
@@ -49,15 +57,6 @@ export default function NavBar({ setData }) {
               Favorites
             </h5>
           </NavLink>
-          <input
-            className="form-control"
-            placeholder="Search"
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleFilter(e.target.value);
-              }
-            }}
-          />
         </div>
       </div>
     </div>

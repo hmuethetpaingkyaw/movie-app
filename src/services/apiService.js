@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from "../utils/cache";
 
 const headers = {
   "Content-Type": "application/json",
@@ -6,6 +7,11 @@ const headers = {
 };
 
 export const apiCall = async (url, method, data)=> {
+  const token = getToken();
+  if(token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
   axios.defaults.headers = headers;
     return await axios
        [method](url, data)

@@ -7,7 +7,6 @@ export default function DefaultLayout ({setData}) {
   const navigate = useNavigate();
     const check = async ()=> {
         const token =  await getToken();
-        console.log(token);
         if (!token) {
           navigate("/login");
         }
@@ -19,7 +18,7 @@ export default function DefaultLayout ({setData}) {
     return (
       <div className="container-fluid bg-black" style={{ minHeight: "100vh" }}>
         <NavBar setData={setData} />
-
+        
         <Outlet />
       </div>
     );

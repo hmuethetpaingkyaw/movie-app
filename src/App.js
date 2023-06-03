@@ -7,16 +7,15 @@ import DefaultLayout from "./Layouts/DefaultLayout";
 import LoginForm from "./MovieApp/auth/LoginForm";
 
 export default function App() {
-  const [data, setData] = useState(null);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<DefaultLayout setData={setData} />}>
-          <Route path="/" element={<Home data={data} setData={setData} />} />
+        <Route element={<DefaultLayout  />}>
+          <Route path="/" element={<Home  />} />
           <Route
             path="/favorites"
-            element={<Favorites data={data} setData={setData} />}
+            element={<Favorites />}
           />
          
         </Route> 

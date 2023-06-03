@@ -8,7 +8,7 @@ export default function MovieCard({movie}) {
     // await axios
     //   .post("http://localhost:3000/favorites", movie)
 
-    apiCall("http://localhost:3000/favorites", 'post', movie);
+    apiCall("favorites", 'post', movie);
       navigate('/favorites')
   }
     return (

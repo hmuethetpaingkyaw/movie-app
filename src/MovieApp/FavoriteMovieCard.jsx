@@ -3,8 +3,8 @@ import { apiCall } from "../services/apiService";
 
 export default function FavouriteMovieCard({ movie, setData }) {
   const handleDelete = async (id) => {
-    await apiCall(`http://localhost:3000/favorites/${id}`, "delete");
-    const tempData = await apiCall("http://localhost:3000/favorites", "get");
+    await apiCall(`favorites/${id}`, "delete");
+    const tempData = await apiCall("favorites", "get");
     setData(tempData);
   };
 
@@ -13,8 +13,8 @@ export default function FavouriteMovieCard({ movie, setData }) {
       ...movie,
       Title: "Hmue Thet Paing Kyaw",
     };
-    await apiCall(`http://localhost:3000/favorites/${id}`, "put", data);
-    const tempData = await apiCall("http://localhost:3000/favorites", "get");
+    await apiCall(`favorites/${id}`, "put", data);
+    const tempData = await apiCall("favorites", "get");
     setData(tempData);
   };
 

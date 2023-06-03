@@ -6,7 +6,9 @@ const headers = {
   Accept: "application/json",
 };
 
-export const apiCall = async (url, method, data)=> {
+const url = "https://simbolo-json-server-auth.onrender.com/";
+
+export const apiCall = async (endPoint, method, data)=> {
   const token = getToken();
   if(token) {
     headers.Authorization = `Bearer ${token}`;
@@ -14,7 +16,7 @@ export const apiCall = async (url, method, data)=> {
 
   axios.defaults.headers = headers;
     return await axios
-       [method](url, data)
+       [method](`${url}/${endPoint}`, data)
        .then(function (response) {
          return response.data;
        });

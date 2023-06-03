@@ -9,7 +9,7 @@ export default function Favorites() {
   const [data, setData] = useState(null);
 
   const loadData = async () => {
-     const tempData = await apiCall("http://localhost:3000/favorites", "get");
+     const tempData = await apiCall("favorites", "get");
      setData(tempData);
   }
   useEffect(() => {

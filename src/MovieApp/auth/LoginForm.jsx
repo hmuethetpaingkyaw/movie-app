@@ -15,7 +15,7 @@ export default function LoginForm() {
       try {
         const endpoint = isLogin ? "login" : "register";
         const resp = await apiCall(
-          `http://localhost:3000/${endpoint}`,
+          `${endpoint}`,
           "post",
           {
             email: emailRef.current.value,
